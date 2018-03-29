@@ -13,7 +13,7 @@ RUN apt-get update && \
 #add on conda python and make sure it is in the path
 RUN mkdir -p $CONDA_DIR && \
     echo export PATH=$CONDA_DIR/bin:'$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet --output-document=anaconda.sh https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh && \
+    wget --quiet --output-document=anaconda.sh https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh && \
     /bin/bash /anaconda.sh -f -b -p $CONDA_DIR && \
     rm anaconda.sh
 
@@ -32,7 +32,7 @@ RUN conda install -y python=3.6 && \
     conda clean -yt
 
 #all the code samples for the video series
-VOLUME ["/src"]
+VOLUME ["/Users/pablo.formoso/Documents/Keras"]
 
 #serve up a jupyter notebook 
 USER keras
